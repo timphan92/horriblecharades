@@ -7,7 +7,7 @@ const signalR = require('@aspnet/signalr');
 export default class App extends React.Component {
 
 componentWillMount () {
-    let connection = new signalR.HubConnectionBuilder().withUrl("https://89f4f9c1.ngrok.io/gamehub").configureLogging(signalR.LogLevel.Information).build();
+    let connection = new signalR.HubConnectionBuilder().withUrl("http://f0c0fc45.ngrok.io/gamehub").configureLogging(signalR.LogLevel.Information).build();
     
     // let connection = new signalR.HubConnection('/gamehub', { logger: signalR.LogLevel.Trance });
     // let connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:5000/gamehub").configureLogging(signalR.LogLevel.Information).build();
@@ -15,7 +15,7 @@ componentWillMount () {
     //   console.log("receivemessage!");
     // });
 
-    fetch('http://89f4f9c1.ngrok.io/gamehub/negotiate', { method: 'post' })
+    fetch('http://f0c0fc45.ngrok.io/gamehub/negotiate', { method: 'post' })
  .then(resp => resp.json())
  .then(data => console.log('test', data))
  .catch((err) => console.log('fail', err) );
@@ -24,7 +24,7 @@ componentWillMount () {
     console.log("connection");
     console.log(connection);
 
-    let val = 'http://89f4f9c1.ngrok.io/api/values';
+    let val = 'http://f0c0fc45.ngrok.io/api/values';
     console.log(val);
 
     // let value = 'http://www.omdbapi.com/?t=hej';
